@@ -618,6 +618,18 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+/* Header */
+.site-header {
+	background-color: rgb(91, 91, 108);
+	display: flex;
+}
+
+.site-header a {
+	color: white;
+	text-decoration: none;
+	list-style: none;
+}
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
@@ -913,3 +925,30 @@ textarea {
 	margin-bottom: 1.5em;
 }
 /*# sourceMappingURL=sass/style.css.map */
+
+/* Clear floats from the content area */
+.entry-footer {
+	clear: both;
+}
+
+/* This code will NOT work properly if there is a sidebar on the left or right */
+
+.alignwide,
+.alignfull {
+	display: block;
+	width: 100vw;
+	max-width: 100vw;
+	margin: 2rem calc(50% - 50vw);
+}
+
+.alignwide {
+	width: auto;
+}
+
+@media only screen and (min-width: 1300px) {
+	.alignwide {
+		max-width: 1300px;
+		margin-left: -150px;
+		margin-right: -150px;
+	}
+}

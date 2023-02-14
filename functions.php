@@ -45,6 +45,8 @@ function mai_school_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+		// Custom image crops
+		add_image_size('student-blog', 200, 300, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -110,7 +112,8 @@ add_action( 'after_setup_theme', 'mai_school_setup' );
  * @global int $content_width
  */
 function mai_school_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'mai_school_content_width', 640 );
+	add_theme_support('align-wide');
+	$GLOBALS['content_width'] = apply_filters( 'mai_school_content_width', 960 );
 }
 add_action( 'after_setup_theme', 'mai_school_content_width', 0 );
 
@@ -170,9 +173,36 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Custom Post Types and Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Change exceprt length to 50 words
+function mai_school_excerpt_length($length) {
+	if ($page_ids = 'archive-fwd-student') {
+		return 25;
+	} else {
+		return 50;
+	}
+
+}
+add_filter('excerpt_length', 'mai_school_excerpt_length', 999);
+
+// Change the excerpt more ([...]) to a link
+function mai_school_excerpt_more ($more) {
+	if ($page_ids = 'archive-fwd-student') {
+		$more = '...<a class="read-more" href="'. esc_url(get_permalink()) .'">Read More about the Student</a>';
+		return $more;
+	} else {
+		$more = '<a class="read-more" href="'. esc_url(get_permalink()) .'">[...]</a>';
+		return $more;
+	}
+}
+add_filter('excerpt_more', 'mai_school_excerpt_more');
