@@ -765,11 +765,11 @@ a:hover {
 
 /* Sidebar */
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 50em) {
 	.widget-area {
 		display: flex;
 		justify-content: space-between;
-		margin: 3rem 0 0 0;
+		margin: 4rem 0 0 0;
 	}
 }
 
@@ -957,37 +957,56 @@ a:hover {
 }
 
 /* News Page */
-.blog .page-news {
+.blog .page-news,
+.postid-31 main,
+.postid-29 main,
+.postid-10 main{
 	margin: 2rem 1rem;
 }
 
-.blog .page-news a {
+.blog .page-news a,
+.postid-31 a,
+.postid-29 a,
+.postid-10 a {
 	text-decoration: none;
 
 }
 
-.blog .page-news p {
+.blog .page-news p,
+.postid-31 p,
+.postid-29 p,
+.postid-10 p {
 	font-size: 1rem;
 	line-height: 2rem;
 }
 
-.blog .page-news footer {
+.blog .page-news footer,
+.postid-31 footer,
+.postid-29 footer,
+.postid-10 footer {
 	display: flex;
 	flex-direction: column;
 }
 
-.blog .page-news footer a{
+.blog .page-news footer a,
+.postid-31 footer a,
+.postid-29 footer a,
+.postid-10 footer a{
 	color:rgb(90, 90, 174);
 	font-weight: 600;
 }
 
 @media screen and (min-width: 50em) {
-	.blog .page-news {
+	.blog .page-news,
+	.postid-31 main,
+	.postid-29 main,
+	.postid-10 main{
 		display: grid;
 		grid-template-columns: 60rem;
 		justify-content: center;
 	}
 }
+
 
 /* Comments
 --------------------------------------------- */
