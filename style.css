@@ -956,6 +956,63 @@ a:hover {
 	}
 }
 
+/* Student Category (DEVELOPER/DESIGNER) Page */
+
+.term-12 main,
+.term-11 main{
+	margin: 2rem 3rem;
+}
+
+.term-12 article a,
+.term-11 article a {
+	text-decoration: none;
+}
+
+.term-12 img,
+.term-11 img {
+	object-fit: cover;
+	height: 20rem;
+}
+
+@media screen and (min-width: 37.5em) {
+	.term-12 main,
+	.term-11 main {
+		display: grid;
+		grid-template-columns: 30rem;
+		justify-content: center;
+	}
+}
+
+/* Individual Student Post */
+.single-fwd-student main {
+	margin: 3rem;
+
+}
+
+.single-fwd-student .entry-content {
+	margin-bottom: 4rem;
+}
+
+.single-fwd-student img {
+	width: 20rem;
+}
+
+.single-fwd-student .widget-area {
+	display: none;
+}
+
+@media screen and (min-width: 37.5em) {
+	.single-fwd-student article {
+	display: grid;
+	grid-template-columns: 30rem;
+	justify-content: center;
+	}
+
+	.single-fwd-student img {
+		width: 30rem;
+	}
+}
+
 /* News Page */
 .blog .page-news,
 .postid-31 main,
