@@ -28,9 +28,14 @@ get_header();
 				comments_template();
 			endif;
 
+			if (function_exists ('get_field')) {
+				if (get_field ('weekly_course_schedule')) {
+					 the_field ('weekly_course_schedule');
+				}
+			}
+
 		endwhile; // End of the loop.
 		?>
-
 	</main><!-- #main -->
 
 <?php

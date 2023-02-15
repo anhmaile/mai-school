@@ -32,28 +32,6 @@ get_header();
 		?>
 
 <?php
-$args = array(
-    'post_type'      => 'fwd-services',
-    'posts_per_page' => -1,
-    'order'          => 'ASC',
-    'orderby'        => 'title',
-);
- 
-$query = new WP_Query( $args );
- 
-if ( $query -> have_posts() ) {
-	echo '<div class="service-nav">';
-    // Output Navigation
-    while ( $query -> have_posts() ) {
-        $query -> the_post();
-        echo '<a href="#'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</a>';
-    }
-    wp_reset_postdata();
-	echo '</div>';
-}
-?>
-
-<?php
 // Output Administrative Staff Content
 $args = array(
     'post_type'      => 'fwd-staff',
@@ -73,10 +51,11 @@ $query = new WP_Query( $args );
  
 if ( $query -> have_posts() ) {
 	echo '<section><h2>Administrative</h2>';
- 
+	echo '<section class="section-admin">';
     while ( $query -> have_posts() ) {
         $query -> the_post();
 		?>
+		<section class="section-staff">
 		<article>
 			<h3><?php the_title(); ?></h3>
 			<?php 
@@ -91,10 +70,12 @@ if ( $query -> have_posts() ) {
 				}
 				?>
 		</article>
+		</section>
 
 		<?php
     }
     wp_reset_postdata();
+	echo '</section>';
 	echo '</section>';
 }
 ?>
@@ -120,10 +101,12 @@ $query = new WP_Query( $args );
  
 if ( $query -> have_posts() ) {
 	echo '<section><h2>Faculty</h2>';
- 
+	echo '<section class="section-faculty">';
     while ( $query -> have_posts() ) {
         $query -> the_post();
 		?>
+
+		<section class="section-staff">
 		<article>
 			<h3><?php the_title(); ?></h3>
 			<?php 
@@ -149,10 +132,12 @@ if ( $query -> have_posts() ) {
 				}
 				?>
 		</article>
+		</section>
 
 		<?php
     }
     wp_reset_postdata();
+	echo '</section>';
 	echo '</section>';
 }
 ?>
