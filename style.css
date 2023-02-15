@@ -960,7 +960,16 @@ textarea {
 
 .term-12 main,
 .term-11 main{
-	margin: 2rem 3rem;
+	margin: 0rem 3rem 3rem 3rem;
+}
+
+.term-12 h1,
+.term-11 h1 {
+	margin-bottom: 1rem;
+}
+.term-12 h2,
+.term-11 h2 {
+	margin-top: 0;
 }
 
 .term-12 article a,
@@ -985,16 +994,24 @@ textarea {
 
 /* Individual Student Post */
 .single-fwd-student main {
-	margin: 3rem;
+	margin: 0 3rem 3rem 3rem;
+}
 
+.single-fwd-student h1 {
+	margin-bottom: 0;
 }
 
 .single-fwd-student .entry-content {
+	margin-top: 0;
 	margin-bottom: 4rem;
 }
 
 .single-fwd-student img {
 	width: 20rem;
+}
+
+.single-fwd-student .wp-block-buttons {
+	justify-content: center;
 }
 
 .single-fwd-student .widget-area {
@@ -1009,6 +1026,7 @@ textarea {
 	}
 
 	.single-fwd-student img {
+		object-fit: cover;
 		width: 30rem;
 	}
 }
