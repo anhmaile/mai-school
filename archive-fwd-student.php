@@ -28,17 +28,20 @@ get_header();
 			);
 
 			$query = new WP_Query($args);
-			if($query -> have_posts()){
-				
+
+			if($query -> have_posts() ){
+			echo '<section class="section-student-list">';	
 				while($query -> have_posts()){
 					$query -> the_post();
 					$the_post_ID = get_the_ID();
 					$article_terms = wp_get_post_terms( $the_post_ID, 'fwd-student-category');
 					?>
+					
+					<section class="section-student">
 					<article>
 						<a href="<?php the_permalink(); ?>">
 
-							<h3><?php the_title(); ?></h3>
+							<h2><?php the_title(); ?></h2>
 							<?php the_post_thumbnail('student-blog'); ?>
 							
 						</a>
@@ -51,14 +54,16 @@ get_header();
 								 <?php echo esc_html($terms->name); ?></a>
 							<?php
 						endforeach;
-						}
 						?>
-						
-					</article>
-					<?php
+						</article>
+						</section>
+						<?php
+						}
+
+						wp_reset_postdata();
+						echo '</section>';
+						echo '</section>';
 				}
-				wp_reset_postdata();
-				echo '</section>';
 			?>
 
 	</main><!-- #main -->
