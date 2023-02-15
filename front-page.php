@@ -24,11 +24,6 @@ get_header();
 			get_template_part( 'template-parts/content', 'page' );
 
 			?>
-
-			<section class="home-intro"></section>
-			<section class="home-left"></section>
-			<section class="home-right"></section>
-			<section></section>
 			<section class="home-news">
 				<h2><?php esc_html_e('Recent News', 'mai_school'); ?></h2>
 				<?php
@@ -38,6 +33,9 @@ get_header();
 					);
 					$blog_query = new WP_Query($args);
 					if( $blog_query -> have_posts()) {
+						?>
+						<section class="home-news-articles">
+						<?php
 						while( $blog_query -> have_posts()) {
 							$blog_query -> the_post();
 							?>
@@ -52,6 +50,9 @@ get_header();
 							<?php
 						}
 						wp_reset_postdata();
+						?>
+						</section>
+						<?php
 					}
 				?>
 			</section>
@@ -64,5 +65,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
