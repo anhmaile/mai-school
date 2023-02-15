@@ -763,6 +763,15 @@ a:hover {
 	}
 }
 
+/* Sidebar */
+
+@media screen and (min-width: 37.5em) {
+	.widget-area {
+		display: flex;
+		justify-content: space-between;
+		margin: 3rem 0 0 0;
+	}
+}
 
 /* Posts and pages
 --------------------------------------------- */
@@ -916,6 +925,8 @@ a:hover {
 .section-student p {
 	margin: 1rem;
 	text-align: left;
+	font-size: 1rem;
+	line-height: 2rem;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -937,7 +948,7 @@ a:hover {
 		grid-template-columns: 66rem;
 		justify-content: center;
 	}
-	
+
 	.section-student-list {
 		display: grid;
 		grid-template-columns: 22rem 22rem 22rem;
@@ -945,6 +956,38 @@ a:hover {
 	}
 }
 
+/* News Page */
+.blog .page-news {
+	margin: 2rem 1rem;
+}
+
+.blog .page-news a {
+	text-decoration: none;
+
+}
+
+.blog .page-news p {
+	font-size: 1rem;
+	line-height: 2rem;
+}
+
+.blog .page-news footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.blog .page-news footer a{
+	color:rgb(90, 90, 174);
+	font-weight: 600;
+}
+
+@media screen and (min-width: 50em) {
+	.blog .page-news {
+		display: grid;
+		grid-template-columns: 60rem;
+		justify-content: center;
+	}
+}
 
 /* Comments
 --------------------------------------------- */

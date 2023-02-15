@@ -186,7 +186,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Change exceprt length to 50 words
 function mai_school_excerpt_length($length) {
-	if ($page_ids = 'archive-fwd-student') {
+	if (is_post_type_archive()) {
 		return 25;
 	} else {
 		return 50;
@@ -197,7 +197,7 @@ add_filter('excerpt_length', 'mai_school_excerpt_length', 999);
 
 // Change the excerpt more ([...]) to a link
 function mai_school_excerpt_more ($more) {
-	if ($page_ids = 'archive-fwd-student') {
+	if (is_post_type_archive()) {
 		$more = '...<a class="read-more" href="'. esc_url(get_permalink()) .'">Read More about the Student</a>';
 		return $more;
 	} else {

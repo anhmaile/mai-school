@@ -15,7 +15,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main page-news">
+	<h1>News</h1>
 
 		<?php
 		if ( have_posts() ) :
@@ -48,10 +49,11 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+		get_sidebar();
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
