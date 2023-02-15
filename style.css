@@ -818,7 +818,7 @@ textarea {
 
 /* Home Page */
 .page-id-33 main{
-	margin: 2rem 1rem;
+	margin: 2rem 1.5rem;
 }
 
 
@@ -855,7 +855,39 @@ textarea {
 /* Schedule Page */
 
 .page-id-80 main{
-	margin: 1.5rem 1rem 3rem 1rem;
+	margin: 1.5rem 1.5rem 3rem 1.5rem;
+}
+
+.page-id-80 .table-container {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1rem 1rem 1rem 0;;
+	border: #404040 solid 1px;
+	border-radius: 10px 10px;
+	text-align: left;
+}
+
+.page-id-80 .table-container h3 {
+	margin: 0;
+	border-bottom: #404040 solid 1px;
+	padding-bottom: .5rem;
+}
+
+.page-id-80 .table-container ul{
+	margin: auto 0;
+	padding: 0;
+}
+
+.page-id-80 .table-container li{
+	list-style: none;
+}
+
+@media screen and (min-width: 37.5em) {
+	.page-id-80  main{
+		display: grid;
+		grid-template-columns: 40rem;
+		justify-content: center;
+	}
 }
 
 @media screen and (min-width: 50em) {
@@ -904,7 +936,7 @@ textarea {
 
 /* Student Page */
 .post-type-archive-fwd-student main{
-	margin: 2rem 1rem;
+	margin: 2rem 1.5rem;
 	text-align: center;
 }
 
@@ -1042,7 +1074,7 @@ textarea {
 .postid-31 main,
 .postid-29 main,
 .postid-10 main{
-	margin: 2rem 1rem;
+	margin: 2rem 1.5rem;
 }
 
 .blog .page-news a,
