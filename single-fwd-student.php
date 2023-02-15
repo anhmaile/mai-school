@@ -18,6 +18,7 @@ get_header();
 
 			get_template_part( 'template-parts/content-fwd-student', get_post_type() );
 
+			echo '<h3>View Other Students!</h3>';
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'mai-school' ) . '</span> <span class="nav-title">%title</span>',
