@@ -141,6 +141,7 @@ add_action( 'widgets_init', 'mai_school_widgets_init' );
  * Enqueue scripts and styles.
  */
 function mai_school_scripts() {
+
 	wp_enqueue_style( 'mai-school-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'mai-school-style', 'rtl', 'replace' );
 
@@ -149,6 +150,8 @@ function mai_school_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_style( 'mai-school-googlefonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet" rel="stylesheet', array(), null);
 }
 add_action( 'wp_enqueue_scripts', 'mai_school_scripts' );
 
